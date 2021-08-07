@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -37,9 +38,11 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.loginUi)
     implementation Deps.kotlin_stdlib
     implementation Deps.kotlin_coroutines_android
-
+    implementation Deps.fragment
+    
     implementation  Deps.material_design
     implementation  Deps.constraint_layout
     implementation  Deps.appcompat
@@ -47,7 +50,8 @@ dependencies {
 
     implementation platform(Deps.firebase_bom)
 
-    implementation project(Modules.loginUi)
+    implementation Deps.hilt_android
+    kapt Deps.hilt_compiler
 
     testImplementation Deps.junit
     testImplementation Deps.truth

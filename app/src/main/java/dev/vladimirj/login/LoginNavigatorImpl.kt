@@ -1,4 +1,9 @@
 package dev.vladimirj.login
 
-class LoginNavigatorImpl {
+import dev.vladimirj.login.ui.LoginNavigator
+
+class LoginNavigatorImpl: LoginNavigator {
+    override fun goToHome() {
+        TODO("Not yet implemented")
+    }
 }

@@ -1,7 +1,8 @@
 object Versions {
-    const val kotlin = "1.4.10"
+    const val kotlin = "1.5.21"
     const val kotlin_coroutines = "1.3.9"
 
+    const val android_x_fragment = "1.3.6"
     const val android_x_legacy_v4 = "1.0.0"
     const val android_x_v7 = "1.2.0"
     const val android_x_core_ktx = "1.3.2"
@@ -31,6 +32,8 @@ object Versions {
     const val gradle_android = "7.0.0"
     const val google_services = "4.3.8"
 
+    const val hilt = "2.38.1"
+
     const val min_sdk = 21
     const val target_sdk = 30
     const val compile_sdk = 30
@@ -45,6 +48,7 @@ object Deps {
     const val kotlin_coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin_coroutines}"
     const val kotlin_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlin_coroutines}"
 
+    const val fragment = "androidx.fragment:fragment-ktx:${Versions.android_x_fragment}"
     const val support = "androidx.legacy:legacy-support-v4:${Versions.android_x_legacy_v4}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.android_x_v7}"
     const val core_ktx = "androidx.core:core-ktx:${Versions.android_x_core_ktx}"
@@ -59,6 +63,9 @@ object Deps {
 
     const val playServicesAuth = "com.google.android.gms:play-services-auth:${Versions.play_services_auth}"
 
+    const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    const val hilt_test = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
 
     const val junit = "junit:junit:${Versions.junit}"
     const val mockito_core = "org.mockito:mockito-core:${Versions.mockito}"
@@ -76,6 +83,7 @@ object Deps {
     const val android_gradle_plugin = "com.android.tools.build:gradle:${Versions.gradle_android}"
     const val kotlin_gradle_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val google_services_plugin = "com.google.gms:google-services:${Versions.google_services}"
+    const val hilt_android_plugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
 }
 
 object Modules {
