@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+
+    compileSdkVersion Versions.compile_sdk
+    buildToolsVersion Versions.build_tools
+    defaultConfig {
+        applicationId "dev.vladimirj.login"
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
+
+        testOptions.unitTests.includeAndroidResources = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation Deps.kotlin_stdlib
+    implementation Deps.kotlin_coroutines_android
+
+    implementation  Deps.material_design
+    implementation  Deps.constraint_layout
+    implementation  Deps.appcompat
+    implementation  Deps.core_ktx
+
+    implementation platform(Deps.firebase_bom)
+
+    implementation project(Modules.loginUi)
+
+    testImplementation Deps.junit
+    testImplementation Deps.truth
+    testImplementation Deps.mockito_kotlin
+    testImplementation Deps.mockito_inline
+    testImplementation Deps.robolectric
+    testImplementation Deps.fragment_test
+    testImplementation Deps.espresso_core
+    testImplementation Deps.test_core_ktx
+
+    kaptTest Deps.databinding_compiler
+}
+apply plugin: 'com.google.gms.google-services'
