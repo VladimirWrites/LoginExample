@@ -37,14 +37,7 @@ android {
 dependencies {
     implementation project(Modules.loginDomain)
 
-    implementation Deps.kotlin_stdlib
-    implementation Deps.kotlin_coroutines_android
-
-    implementation  Deps.material_design
-    implementation  Deps.constraint_layout
-    implementation  Deps.appcompat
-    implementation  Deps.core_ktx
-    implementation  Deps.fragment
+    implementation  project(Modules.baseUi)
 
     implementation Deps.hilt_android
     kapt Deps.hilt_compiler

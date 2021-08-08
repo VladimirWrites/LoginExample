@@ -17,8 +17,6 @@ object Versions {
 
     const val play_services_auth = "19.2.0"
 
-    const val koin = "2.1.6"
-
     const val junit = "4.13.1"
     const val mockito = "3.5.15"
     const val mockito_kotlin = "2.2.0"
@@ -90,4 +88,5 @@ object Modules {
     const val loginUi = ":login:ui"
     const val loginDomain = ":login:domain"
     const val loginData = ":login:data"
+    const val baseUi = ":base:ui"
 }

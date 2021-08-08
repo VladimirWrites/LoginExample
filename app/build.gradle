@@ -39,14 +39,8 @@ android {
 
 dependencies {
     implementation project(Modules.loginUi)
-    implementation Deps.kotlin_stdlib
-    implementation Deps.kotlin_coroutines_android
-    implementation Deps.fragment
-    
-    implementation  Deps.material_design
-    implementation  Deps.constraint_layout
-    implementation  Deps.appcompat
-    implementation  Deps.core_ktx
+
+    implementation  project(Modules.baseUi)
 
     implementation platform(Deps.firebase_bom)
 
