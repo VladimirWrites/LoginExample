@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation project(Modules.loginUi)
+    implementation project(Modules.homeUi)
 
     implementation  project(Modules.baseUi)
 

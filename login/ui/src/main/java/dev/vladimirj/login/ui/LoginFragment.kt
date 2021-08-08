@@ -19,4 +19,10 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
     }
+
+    companion object {
+        const val TAG = "LoginFragment"
+
+        fun newInstance() = LoginFragment()
+    }
 }

@@ -88,5 +88,6 @@ object Modules {
     const val loginUi = ":login:ui"
     const val loginDomain = ":login:domain"
     const val loginData = ":login:data"
+    const val homeUi = ":home:ui"
     const val baseUi = ":base:ui"
 }
