@@ -1,6 +1,6 @@
 object Versions {
     const val kotlin = "1.5.21"
-    const val kotlin_coroutines = "1.3.9"
+    const val kotlin_coroutines = "1.5.1"
 
     const val android_x_fragment = "1.3.6"
     const val android_x_legacy_v4 = "1.0.0"
@@ -13,9 +13,7 @@ object Versions {
     const val android_x_databinding_compiler = "4.1.0"
 
     const val firebase_core = "17.5.1"
-    const val firebase_bom = "28.3.0"
-
-    const val play_services_auth = "19.2.0"
+    const val firebase_auth = "21.0.1"
 
     const val junit = "4.13.1"
     const val mockito = "3.5.15"
@@ -45,6 +43,8 @@ object Deps {
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val kotlin_coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlin_coroutines}"
     const val kotlin_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlin_coroutines}"
+    const val kotlin_coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlin_coroutines}"
+
 
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.android_x_fragment}"
     const val support = "androidx.legacy:legacy-support-v4:${Versions.android_x_legacy_v4}"
@@ -56,13 +56,11 @@ object Deps {
     const val lifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.android_x_lifecycle}"
 
     const val firebase_core = "com.google.firebase:firebase-core:${Versions.firebase_core}"
-    const val firebase_bom = "com.google.firebase:firebase-bom:${Versions.firebase_bom}"
-    const val firebase_auth = "com.google.firebase:firebase-auth"
-
-    const val playServicesAuth = "com.google.android.gms:play-services-auth:${Versions.play_services_auth}"
+    const val firebase_auth = "com.google.firebase:firebase-auth-ktx:${Versions.firebase_auth}"
 
     const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    const val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
     const val hilt_test = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
 
     const val junit = "junit:junit:${Versions.junit}"

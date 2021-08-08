@@ -38,12 +38,13 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.loginData)
+    implementation project(Modules.loginDomain)
     implementation project(Modules.loginUi)
+
     implementation project(Modules.homeUi)
 
     implementation  project(Modules.baseUi)
-
-    implementation platform(Deps.firebase_bom)
 
     implementation Deps.hilt_android
     kapt Deps.hilt_compiler
@@ -56,6 +57,10 @@ dependencies {
     testImplementation Deps.fragment_test
     testImplementation Deps.espresso_core
     testImplementation Deps.test_core_ktx
+    testImplementation Deps.kotlin_coroutines_test
+
+    testImplementation Deps.hilt_test
+    kaptTest Deps.hilt_android_compiler
 
     kaptTest Deps.databinding_compiler
 }

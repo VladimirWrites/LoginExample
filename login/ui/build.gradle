@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.loginData)
     implementation project(Modules.loginDomain)
 
     implementation  project(Modules.baseUi)
@@ -46,9 +47,7 @@ dependencies {
     testImplementation Deps.truth
     testImplementation Deps.mockito_kotlin
     testImplementation Deps.mockito_inline
-    testImplementation Deps.robolectric
-    testImplementation Deps.fragment_test
-    testImplementation Deps.espresso_core
+    testImplementation Deps.arch_core_testing
 
     kaptTest Deps.databinding_compiler
 }

@@ -1,8 +1,8 @@
 package dev.vladimirj.login.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 
 interface LoginNavigator {
-    fun goToHome(activity: AppCompatActivity)
-    fun goToLogin(activity: AppCompatActivity)
+    fun goToHome(activity: FragmentActivity)
+    fun goToLogin(activity: FragmentActivity)
 }

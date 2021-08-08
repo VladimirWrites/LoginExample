@@ -1,14 +1,14 @@
 package dev.vladimirj.login
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import dev.vladimirj.home.ui.HomeFragment
 import dev.vladimirj.login.ui.LoginFragment
 import dev.vladimirj.login.ui.LoginNavigator
 
 class LoginNavigatorImpl: LoginNavigator {
 
-    override fun goToHome(activity: AppCompatActivity) {
+    override fun goToHome(activity: FragmentActivity) {
         navigateToFragment(
             activity,
             HomeFragment.newInstance(),
@@ -16,7 +16,7 @@ class LoginNavigatorImpl: LoginNavigator {
         )
     }
 
-    override fun goToLogin(activity: AppCompatActivity) {
+    override fun goToLogin(activity: FragmentActivity) {
         navigateToFragment(
             activity,
             LoginFragment.newInstance(),
@@ -24,7 +24,7 @@ class LoginNavigatorImpl: LoginNavigator {
         )
     }
 
-    private fun navigateToFragment(activity: AppCompatActivity, fragment: Fragment, tag: String, addToBackStack: Boolean = false) {
+    private fun navigateToFragment(activity: FragmentActivity, fragment: Fragment, tag: String, addToBackStack: Boolean = false) {
         val ft = activity.supportFragmentManager.beginTransaction()
         ft.replace(R.id.fragment_container, fragment, tag)
         if (addToBackStack) {
