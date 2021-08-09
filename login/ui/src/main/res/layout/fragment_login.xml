@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -9,17 +10,19 @@
             type="dev.vladimirj.login.ui.LoginViewModel"/>
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
+            android:id="@+id/text_input_email"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="@dimen/login_text_padding">
+            android:padding="@dimen/login_text_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_email"
@@ -27,15 +30,18 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/email_hint"
                 android:inputType="textEmailAddress"
-                android:text="@={viewModel.email}"/>
+                android:text="@={viewModel.email}" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
+            android:id="@+id/text_input_password"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="@dimen/login_text_padding">
+            android:padding="@dimen/login_text_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_password"
@@ -43,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
-                android:text="@={viewModel.password}"/>
+                android:text="@={viewModel.password}" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,18 +57,22 @@
             android:id="@+id/button_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/login"
             android:enabled="@{viewModel.isLoginEnabled}"
             android:onClick="@{() -> viewModel.loginWithEmailAndPassword()}"
-            app:goneUnless="@{!viewModel.isLoading()}"/>
+            android:text="@string/login"
+            app:goneUnless="@{!viewModel.isLoading()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_password" />
 
         <ProgressBar
             android:id="@+id/login_progress_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:goneUnless="@{viewModel.isLoading()}"
-            android:layout_gravity="center"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_login"/>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

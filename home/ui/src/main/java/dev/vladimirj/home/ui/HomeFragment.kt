@@ -20,6 +20,6 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
     companion object {
         const val TAG = "HomeFragment"
 
-        fun newInstance() = HomeFragment()
+        fun newInstance(uid: String) = HomeFragment()
     }
 }

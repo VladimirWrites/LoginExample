@@ -3,4 +3,8 @@
     <string name="login">Login</string>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
+
+    <string name="biometric_prompt_info_title">LoginExample App Authentication</string>
+    <string name="biometric_prompt_info_description">Use biometric authentication to login faster</string>
+    <string name="biometric_prompt_info_use_app_password">Use app password</string>
 </resources>

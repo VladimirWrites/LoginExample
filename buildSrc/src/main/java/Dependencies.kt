@@ -11,6 +11,9 @@ object Versions {
     const val material_design = "1.2.1"
     const val android_x_work_manager = "2.4.0"
     const val android_x_databinding_compiler = "4.1.0"
+    const val android_x_biometric = "1.1.0"
+
+    const val gson = "2.8.7"
 
     const val firebase_core = "17.5.1"
     const val firebase_auth = "21.0.1"
@@ -30,7 +33,7 @@ object Versions {
 
     const val hilt = "2.38.1"
 
-    const val min_sdk = 21
+    const val min_sdk = 23
     const val target_sdk = 30
     const val compile_sdk = 30
     const val build_tools = "30.0.3"
@@ -45,7 +48,6 @@ object Deps {
     const val kotlin_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlin_coroutines}"
     const val kotlin_coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlin_coroutines}"
 
-
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.android_x_fragment}"
     const val support = "androidx.legacy:legacy-support-v4:${Versions.android_x_legacy_v4}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.android_x_v7}"
@@ -54,6 +56,9 @@ object Deps {
     const val constraint_layout = "androidx.constraintlayout:constraintlayout:${Versions.android_x_constraint_layout}"
     const val databinding_compiler = "androidx.databinding:databinding-compiler:${Versions.android_x_databinding_compiler}"
     const val lifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.android_x_lifecycle}"
+    const val biometric = "androidx.biometric:biometric:${Versions.android_x_biometric}"
+
+    const val gson = "com.google.code.gson:gson:${Versions.gson}"
 
     const val firebase_core = "com.google.firebase:firebase-core:${Versions.firebase_core}"
     const val firebase_auth = "com.google.firebase:firebase-auth-ktx:${Versions.firebase_auth}"

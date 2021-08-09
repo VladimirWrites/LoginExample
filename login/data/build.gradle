@@ -22,11 +22,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
@@ -34,12 +34,15 @@ dependencies {
     implementation Deps.kotlin_stdlib
     implementation Deps.kotlin_coroutines_android
 
+    implementation Deps.gson
+
     implementation project(Modules.loginDomain)
 
     implementation Deps.hilt_android
     kapt Deps.hilt_compiler
 
-    api Deps.firebase_auth
+    implementation Deps.biometric
+    implementation Deps.firebase_auth
 
     testImplementation Deps.junit
     testImplementation Deps.truth

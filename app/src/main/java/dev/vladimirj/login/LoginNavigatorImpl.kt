@@ -8,10 +8,10 @@ import dev.vladimirj.login.ui.LoginNavigator
 
 class LoginNavigatorImpl: LoginNavigator {
 
-    override fun goToHome(activity: FragmentActivity) {
+    override fun goToHome(activity: FragmentActivity, uid: String) {
         navigateToFragment(
             activity,
-            HomeFragment.newInstance(),
+            HomeFragment.newInstance(uid),
             HomeFragment.TAG
         )
     }

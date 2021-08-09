@@ -1,14 +1,12 @@
 package dev.vladimirj.login
 
 import android.os.Build
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.whenever
+import com.nhaarman.mockitokotlin2.*
 import dagger.hilt.android.testing.*
 import dev.vladimirj.base.ui.CoroutineDispatcherProvider
 import dev.vladimirj.login.di.AppModule
 import dev.vladimirj.login.domain.entity.LoginResult
+import dev.vladimirj.login.domain.usecase.IsAuthenticationSupported
 import dev.vladimirj.login.domain.usecase.Login
 import dev.vladimirj.login.ui.LoginFragment
 import dev.vladimirj.login.ui.LoginNavigator
@@ -36,6 +34,9 @@ class LoginFragmentShould {
     val navigator = mock<LoginNavigator>()
 
     @BindValue
+    val isAuthenticationSupported = mock<IsAuthenticationSupported>()
+
+    @BindValue
     val coroutineDispatcherProvider = CoroutineDispatcherProvider(
         io = Dispatchers.Unconfined,
         main = Dispatchers.Unconfined
@@ -55,10 +56,12 @@ class LoginFragmentShould {
     }
 
     @Test
-    fun navigateToHomeScreen_whenCorrectDataEntered() = runBlockingTest {
+    fun navigateToHomeScreen_whenCorrectDataEntered_andAuthenticationNotSupported() = runBlockingTest {
         val email = "test@email.com"
         val password = "test123"
-        whenever(login.invoke(email, password)).thenReturn(LoginResult.Successful("uid", email))
+        val uid = "uid"
+        whenever(login.invoke(email, password)).thenReturn(LoginResult.Successful(uid, email))
+        whenever(isAuthenticationSupported.invoke()).thenReturn(false)
         launchFragmentInHiltContainer<LoginFragment>()
 
         loginScreen {
@@ -67,7 +70,7 @@ class LoginFragmentShould {
             clickLoginButton()
         }
 
-        verify(navigator).goToHome(any())
+        verify(navigator).goToHome(any(), eq(uid))
     }
 
     @Test
@@ -83,4 +86,6 @@ class LoginFragmentShould {
             checkSnackbarShown(message)
         }
     }
+
+    // TODO: Test paths where authentication is supported if possible
 }
